@@ -2,14 +2,19 @@ import React from 'react'
 import './assets/css/base/base.css'
 import Home from './paginas/Home';
 import Sobre from './paginas/Sobre';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 function App() {
-  return (
-    <>
 
-      <Home />
-      <Sobre />
-    </>
+  return (
+    <Router>
+
+      <Switch>
+        <Route exact path="/"><Home /></Route>
+        <Route path="/sobre"><Sobre /></Route>
+      </Switch>
+      
+    </Router>
   )
 }
 
